@@ -1,16 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package informationengineering;
- 
-import javax.swing.JOptionPane;
 
+/*
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
 /**
  *
- * @author AhmedMahfouz
+ * @author Ahmed Mahfouz
  */
+package informationengineering;
+
+import javax.swing.JOptionPane;
+
 public class Transposition extends javax.swing.JInternalFrame {
 
     /**
@@ -217,27 +222,24 @@ public class Transposition extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
-       transpositioncode c=new transpositioncode();
- c.plan_text_arr(jTextField2.getText());
- c.key_arr(jTextField3.getText());
-                c.key_order();
-                String ss = "";
-                for (int i = 0; i < c.k.length; i++) {
-                    for (int ii = 0; ii <= (c.plan_text.length / c.k.length); ii++) {
-                        int s = c.index[i] + (c.k.length * ii);
-                        if (s >= c.plan_text.length) {
-                            s = s % c.plan_text.length;
-                            ss = ss + (char) (s + (int) 'a');
-                        } else {
-                            ss = ss + c.plan_text[s];
-                        }
-                    }
+        transpositioncode c = new transpositioncode();
+        c.plan_text_arr(jTextField2.getText());
+        c.key_arr(jTextField3.getText());
+        c.key_order();
+        String ss = "";
+        for (int i = 0; i < c.k.length; i++) {
+            for (int ii = 0; ii <= (c.plan_text.length / c.k.length); ii++) {
+                int s = c.index[i] + (c.k.length * ii);
+                if (s >= c.plan_text.length) {
+                    s = s % c.plan_text.length;
+                    ss = ss + (char) (s + (int) 'a');
+                } else {
+                    ss = ss + c.plan_text[s];
                 }
-                jTextField4.setText(ss);
-         
-        
-      
+            }
+        }
+        jTextField4.setText(ss);
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -247,8 +249,8 @@ public class Transposition extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-         try {
-            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+"traans.pdf");
+        try {
+            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "traans.pdf");
         } catch (Exception e) {
         }
 // TODO add your handling code here:
@@ -256,34 +258,33 @@ public class Transposition extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-               transpositioncode c=new transpositioncode();
+        transpositioncode c = new transpositioncode();
 
-c.real_plan_text = new char[22];
-                c.real_plan_text = jTextField2.getText().toCharArray();
-                c.plan_text = jTextField12.getText().toCharArray();
-                 c.key_order();
-                 c.key_arr(jTextField3.getText());
-                 
-                String s = "";
-                int end = 0;
+        c.real_plan_text = new char[22];
+        c.real_plan_text = jTextField2.getText().toCharArray();
+        c.plan_text = jTextField12.getText().toCharArray();
+        c.key_order();
+        c.key_arr(jTextField3.getText());
+
+        String s = "";
+        int end = 0;
 /////////////                
-                for (int f = 0; f <= c.real_plan_text.length / c.k.length; f++) {
-                    if (f == c.real_plan_text.length / c.k.length) {
-                        end = c.real_plan_text.length % c.k.length;
-                    } else {
-                        end = c.k.length;
+        for (int f = 0; f <= c.real_plan_text.length / c.k.length; f++) {
+            if (f == c.real_plan_text.length / c.k.length) {
+                end = c.real_plan_text.length % c.k.length;
+            } else {
+                end = c.k.length;
+            }
+            for (int x = 0; x < end; x++) {
+                for (int i = 0; i < c.k.length; i++) {
+                    if (c.index[i] == x) {
+                        s = s + c.plan_text[((((c.real_plan_text.length / c.k.length) + 1) * i) + f)];
                     }
-                    for (int x = 0; x < end; x++) {
-                        for (int i = 0; i < c.k.length; i++) {
-                            if (c.index[i] == x) {
-                                s = s + c.plan_text[((((c.real_plan_text.length / c.k.length) + 1) * i) + f)];
-                            }
-                        }
-                    }
-                }//weneedmoresnownow
-                jTextField9.setText(s);
-        
-          
+                }
+            }
+        }//weneedmoresnownow
+        jTextField9.setText(s);
+
               //   jTextField9.setText(c.decryp(jTextField12.getText()));
 
     }//GEN-LAST:event_jButton2ActionPerformed

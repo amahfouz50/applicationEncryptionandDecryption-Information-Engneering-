@@ -1,11 +1,20 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
+/**
+ *
+ * @author Ahmed Mahfouz
  */
 package informationengineering;
 
- import java.io.UnsupportedEncodingException;
+import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -155,97 +164,94 @@ public class One_Time_pad extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public static String  encrypt(String txt1,String txt2) throws UnsupportedEncodingException {
-        String x=txt1;
-        String y=txt2;
+    public static String encrypt(String txt1, String txt2) throws UnsupportedEncodingException {
+        String x = txt1;
+        String y = txt2;
         byte[] infoBin = null;
         infoBin = x.getBytes("UTF-8");
         byte[] infoBin2 = null;
         infoBin2 = y.getBytes("UTF-8");
-                String [] binary=new String[infoBin.length];
-                                String [] binary2=new String[infoBin.length];
-                      String [] binary3=new String[infoBin.length];
+        String[] binary = new String[infoBin.length];
+        String[] binary2 = new String[infoBin.length];
+        String[] binary3 = new String[infoBin.length];
 
-
-int i=0;
+        int i = 0;
         for (byte b : infoBin) {
- 
-             binary[i]=Integer.toBinaryString(b);
-             i++;
-             if(i>=binary.length)i=0;
-    }
-        
-            for (byte b : infoBin2) {
- 
-             binary2[i]=Integer.toBinaryString(b);
-             i++;
-             if(i>=binary2.length)i=0;
-    }
-            
-            
-          
-            String Ciper="";
-        for(int c=0;c<binary.length;c++){
-             binary3[i]="";
-         for(int p=0;p<binary[i].length();p++){
-         if(binary[i].charAt(p)==binary2[i].charAt(p)){
-         binary3[i]+='0';
-         }
-         else{
-         binary3[i]+=1;
-         }
-         }
-            System.out.println(binary[c]+"--"+binary2[c]+"--"+binary3[i]);
+
+            binary[i] = Integer.toBinaryString(b);
+            i++;
+            if (i >= binary.length) {
+                i = 0;
+            }
+        }
+
+        for (byte b : infoBin2) {
+
+            binary2[i] = Integer.toBinaryString(b);
+            i++;
+            if (i >= binary2.length) {
+                i = 0;
+            }
+        }
+
+        String Ciper = "";
+        for (int c = 0; c < binary.length; c++) {
+            binary3[i] = "";
+            for (int p = 0; p < binary[i].length(); p++) {
+                if (binary[i].charAt(p) == binary2[i].charAt(p)) {
+                    binary3[i] += '0';
+                } else {
+                    binary3[i] += 1;
+                }
+            }
+            System.out.println(binary[c] + "--" + binary2[c] + "--" + binary3[i]);
     //   int num = Integer.parseInt(binary3[i],2);
-           
-            int num=integerfrmbinary(binary3[i]);
-            Ciper+=(num);    
+
+            int num = integerfrmbinary(binary3[i]);
+            Ciper += (num);
         }
         return Ciper;
-    
-}
-    public static int integerfrmbinary(String str){
-    double j=0;
-    for(int i=0;i<str.length();i++){
-        if(str.charAt(i)== '1'){
-         j=j+ Math.pow(2,str.length()-1-i);
-     }
 
     }
-    return  (int) j;
 
-} 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        
-        if (jTextField2.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "No Plain Text Found  !");
-            
-        }else if (jTextField3.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "No Key Text Found  !");
-            
-                 
-        }else {
-            try {
-            jTextField4.setText(encrypt(jTextField2.getText().toString(),jTextField3.getText().toString()));
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Key Must be Integer ! \n"+e.getMessage());
+    public static int integerfrmbinary(String str) {
+        double j = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '1') {
+                j = j + Math.pow(2, str.length() - 1 - i);
             }
 
         }
-        
-       
+        return (int) j;
+
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        if (jTextField2.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No Plain Text Found  !");
+
+        } else if (jTextField3.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No Key Text Found  !");
+
+        } else {
+            try {
+                jTextField4.setText(encrypt(jTextField2.getText().toString(), jTextField3.getText().toString()));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Key Must be Integer ! \n" + e.getMessage());
+            }
+
+        }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-         try {
-            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+"OneTimePad.pdf");
+        try {
+            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "OneTimePad.pdf");
         } catch (Exception e) {
         }
-         
-         
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 

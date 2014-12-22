@@ -1,16 +1,22 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
+/**
+ *
+ * @author Ahmed Mahfouz
  */
 package informationengineering;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author AhmedMahfouz
- */
+
 public class RSA extends javax.swing.JInternalFrame {
 
     /**
@@ -175,28 +181,26 @@ public class RSA extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        if (jTextField2.getText().isEmpty()){
+        if (jTextField2.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No Plain Text Found  !");
-            
-            
-                 
-        }else {
+
+        } else {
             try {
- RSAcode r=new RSAcode();
-   jTextField4.setText(r.encrypt(jTextField2.getText()).toString());
-          }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Key Must be Integer ! \n"+e.getMessage());
+                RSAcode r = new RSAcode();
+                jTextField4.setText(r.encrypt(jTextField2.getText()).toString());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Key Must be Integer ! \n" + e.getMessage());
             }
 
         }
-        
-       // TODO add your handling code here:
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-         try {
-            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+"RSA.pdf");
+        try {
+            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "RSA.pdf");
         } catch (Exception e) {
         }
 // TODO add your handling code here:
@@ -204,18 +208,15 @@ public class RSA extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        
-        if (jTextField12.getText().isEmpty()){
+        if (jTextField12.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No Plain Text Found  !");
-            
-            
-                 
-        }else {
+
+        } else {
             try {
-RSAcode r=new RSAcode();
-   jTextField9.setText(r.decrept(jTextField12.getText()).toString());
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Key Must be Integer ! \n"+e.getMessage());
+                RSAcode r = new RSAcode();
+                jTextField9.setText(r.decrept(jTextField12.getText()).toString());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Key Must be Integer ! \n" + e.getMessage());
             }
 
         }

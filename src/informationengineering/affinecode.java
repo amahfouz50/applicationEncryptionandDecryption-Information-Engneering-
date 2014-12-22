@@ -1,7 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
+/**
+ *
+ * @author Ahmed Mahfouz
  */
 package informationengineering;
 
@@ -10,36 +19,37 @@ package informationengineering;
  * @author AhmedMahfouz
  */
 public class affinecode {
+
     char plan_text[];
     int k;
-  static  int m;
+    static int m;
     int inv_M = 0;
     int len = 0;
     int div[] = new int[22];
     int rem[] = new int[22];
     int inv[] = new int[22];
 //----------------------------\
-    
-      void get_plan_text(String t1) {
+
+    void get_plan_text(String t1) {
         plan_text = new char[22];
         plan_text = t1.toCharArray();
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-      void get_key(String t2) {
+    void get_key(String t2) {
         k = Integer.parseInt(t2);
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------  
 
-      void get_mul(String t3) {
+    void get_mul(String t3) {
         m = Integer.parseInt(t3);
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-    public String  Affine_Encryption() {
+    public String Affine_Encryption() {
         String f = "";
         for (int i = 0; i < plan_text.length; i++) {
             int p = (int) plan_text[i] - (int) 'a';
@@ -75,7 +85,7 @@ public class affinecode {
         } else {
             inv_M = inv[0];
         }
-        
+
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
@@ -104,17 +114,11 @@ public class affinecode {
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------           
-     public static int findGCD(int number1, int number2) {
-        if(number2 == 0){
+
+    public static int findGCD(int number1, int number2) {
+        if (number2 == 0) {
             return number1;
         }
-        return findGCD(number2, number1%number2);
+        return findGCD(number2, number1 % number2);
     }
 }
-  
-    
-    
-    
-    
-    
- 

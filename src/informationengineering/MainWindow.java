@@ -1,7 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
+/**
+ *
+ * @author Ahmed Mahfouz
  */
 package informationengineering;
 
@@ -26,29 +35,30 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
-        
+
     }
-     public static void music(){
-        
-        AudioPlayer MGP=AudioPlayer.player;
+
+    public static void music() {
+
+        AudioPlayer MGP = AudioPlayer.player;
         AudioStream BGM;
         AudioData MD;
         ContinuousAudioDataStream loop = null;
-        
+
         try {
             BGM = new AudioStream(new FileInputStream("2.wav"));
             MD = BGM.getData();
             loop = new ContinuousAudioDataStream(MD);
-            
+
         } catch (IOException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
         MGP.start(loop);
-        
+
     }
-     public static void music1(){
-        
-       
+
+    public static void music1() {
+
     }
 
     /**
@@ -319,7 +329,7 @@ public class MainWindow extends javax.swing.JFrame {
         CaesarCipher ob = new CaesarCipher();
         Desktop_panel_1.add(ob);
         ob.show();
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -336,7 +346,7 @@ public class MainWindow extends javax.swing.JFrame {
         Play_Fair ob = new Play_Fair();
         Desktop_panel_1.add(ob);
         ob.show();
-        
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -345,7 +355,7 @@ public class MainWindow extends javax.swing.JFrame {
         polyAlphabetic ob = new polyAlphabetic();
         Desktop_panel_1.add(ob);
         ob.show();
-        
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -362,14 +372,14 @@ public class MainWindow extends javax.swing.JFrame {
         Affine ob = new Affine();
         Desktop_panel_1.add(ob);
         ob.show();
-        
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 
         Hill_cipher_3_3 ob = new Hill_cipher_3_3();
-        
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -398,11 +408,11 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-      DesMain m=new DesMain();
+        DesMain m = new DesMain();
 
-      /*  DES ob = new DES();
-        Desktop_panel_1.add(ob);
-        ob.show();*/
+        /*  DES ob = new DES();
+         Desktop_panel_1.add(ob);
+         ob.show();*/
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -422,8 +432,6 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void panel_ButtonsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panel_ButtonsKeyPressed
 
-
-      
 // TODO add your handling code here:
     }//GEN-LAST:event_panel_ButtonsKeyPressed
 
@@ -431,7 +439,7 @@ public class MainWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -1,7 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
+/**
+ *
+ * @author Ahmed Mahfouz
  */
 package informationengineering;
 
@@ -10,15 +19,16 @@ package informationengineering;
  * @author AhmedMahfouz
  */
 public class combinationcode {
-      char matrix[][] = new char[5][5];
+
+    char matrix[][] = new char[5][5];
     char plain_text[] = new char[55];
     char first[] = new char[66];
     int first_count = 0;
-    
- public void get_plain_text(String t1 ){
+
+    public void get_plain_text(String t1) {
         plain_text = new char[22];
         plain_text = t1.toCharArray();
-        
+
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
@@ -56,7 +66,7 @@ public class combinationcode {
 /////////////////////////                        
                         if (flag == 1) {
                             first[string_count] = matrix[0][row];
-                            first[string_count + plain_text.length ] = matrix[0][col];
+                            first[string_count + plain_text.length] = matrix[0][col];
                         }
 /////////////////////////
                     }
@@ -82,7 +92,7 @@ public class combinationcode {
             }
             s = s + matrix[row][col];
         }
-       return (s);
+        return (s);
     }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------  

@@ -1,7 +1,16 @@
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *   I am Ahmed Reda Mahfouz
+ *   Student at the Faculty of Computing and Information Menoufia University 
+ *   Department of Computer Science
+ *
+ *   *       Please Visit us at www.github.com/amahfouz50     *
+ *  This Program was Developed by www.github.com/amahfouz50 forums Team
+ *  *           Please Don't Remove This Comment       *
+ */
+/**
+ *
+ * @author Ahmed Mahfouz
  */
 package informationengineering;
 
@@ -12,7 +21,9 @@ import java.util.ArrayList;
  * @author AhmedMahfouz
  */
 public class playfare {
-    static   char[][] matrix = new char[5][5];
+
+    static char[][] matrix = new char[5][5];
+
     public void fillMatrix(String key) {
         int flage = 0;
         int f_row = 0;
@@ -38,7 +49,6 @@ public class playfare {
                     w = w + 1;
                     reply += 1;
 
-
                 }
 
                 if (w == key.length()) {
@@ -54,8 +64,6 @@ public class playfare {
                 break;
             }
 
-
-
         }
         if (f_column - reply < 0) {
             f_column = 5 + f_column;
@@ -66,10 +74,10 @@ public class playfare {
             f_column = f_column - reply;
         }
         remainFill(f_column, f_row);
-        
 
     }
-  public void remainFill(int f_column,int f_row){
+
+    public void remainFill(int f_column, int f_row) {
         int cha = 97;
         ArrayList<Character> t = new ArrayList<>();
 
@@ -86,7 +94,6 @@ public class playfare {
             } else {
                 cha = cha + 1;
             }
-
 
         }
         int d = 0;
@@ -106,12 +113,11 @@ public class playfare {
             System.out.println("");
         }
 
-
     }
 
-    public ArrayList<ArrayList> devidePlain(String plaintext,String key) {
+    public ArrayList<ArrayList> devidePlain(String plaintext, String key) {
         fillMatrix(key);
-      
+
         ArrayList<ArrayList> arr = new ArrayList<>();
         int z = 0;
         int y = 0;
@@ -125,7 +131,6 @@ public class playfare {
             }
             ArrayList<Character> c = new ArrayList<>();
             for (int x = z; x < y; x++) {
-
 
                 c.add(plaintext.charAt(x));
 
@@ -149,16 +154,16 @@ public class playfare {
             }
 
         }
-             System.out.println(arr);
+        System.out.println(arr);
 //        System.out.println( makeCipher(arr));
         return arr;
-    
+
     }
 
-    public String encrypt(String plaintext,String key) {
-        
+    public String encrypt(String plaintext, String key) {
+
         String fin = "";
-        ArrayList<ArrayList> cipher =devidePlain(plaintext,key);
+        ArrayList<ArrayList> cipher = devidePlain(plaintext, key);
         for (int i = 0; i < cipher.size(); i++) {
             ArrayList<Character> text = cipher.get(i);
             ArrayList<Integer> c1;
@@ -166,20 +171,16 @@ public class playfare {
             if (text.get(0) == 'j') {
                 c1 = checkRedundant('i');
                 c2 = checkRedundant(text.get(1));
-             
+
             } else if (text.get(1) == 'j') {
                 c1 = checkRedundant(text.get(0));
                 c2 = checkRedundant('i');
-               
-              
 
             } else {
                 c1 = checkRedundant(text.get(0));
                 c2 = checkRedundant(text.get(1));
-               
 
             }
-
 
             if (c1.get(0) == c2.get(0)) {
                 if (c1.get(1) + 1 == 5) {
@@ -208,18 +209,16 @@ public class playfare {
                 fin += matrix[c1.get(0)][c2.get(1)];
             }
 
-
-
-
         }
         return fin;
 //        System.out.println(fin);
 
     }
-        public String decrypt(String plaintext,String key) {
 
-                 String fin = "";
-        ArrayList<ArrayList> cipher =devidePlain(plaintext,key);
+    public String decrypt(String plaintext, String key) {
+
+        String fin = "";
+        ArrayList<ArrayList> cipher = devidePlain(plaintext, key);
         for (int i = 0; i < cipher.size(); i++) {
             ArrayList<Character> text = cipher.get(i);
             ArrayList<Integer> c1;
@@ -227,16 +226,14 @@ public class playfare {
             if (text.get(0) == 'j') {
                 c1 = checkRedundant('i');
                 c2 = checkRedundant(text.get(1));
-             
+
             } else if (text.get(1) == 'j') {
                 c1 = checkRedundant(text.get(0));
                 c2 = checkRedundant('i');
-               
-              
 
             } else {
                 c1 = checkRedundant(text.get(0));
-                c2 = checkRedundant(text.get(1));              
+                c2 = checkRedundant(text.get(1));
             }
 
             if (c1.get(0) == c2.get(0)) {
@@ -245,7 +242,7 @@ public class playfare {
                 } else {
                     fin += matrix[c1.get(0)][c1.get(1) - 1];
                 }
-                if (c2.get(1) -1  == -1) {
+                if (c2.get(1) - 1 == -1) {
                     fin += matrix[c2.get(0)][4];
                 } else {
                     fin += matrix[c2.get(0)][c2.get(1) - 1];
@@ -265,9 +262,6 @@ public class playfare {
                 fin += matrix[c2.get(0)][c1.get(1)];
                 fin += matrix[c1.get(0)][c2.get(1)];
             }
-
-
-
 
         }
         return fin;
@@ -298,5 +292,5 @@ public class playfare {
         }
         return return_result;
     }
- 
+
 }
